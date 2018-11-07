@@ -37,7 +37,7 @@ const queue = new Map();
  
  
  
-var prefix = "*M" 
+var prefix = "MI" 
 client.on('message', async msg => {
     if (msg.author.bot) return undefined;
    
@@ -53,14 +53,14 @@ client.on('message', async msg => {
  
     if (command === `play`) {
         const voiceChannel = msg.member.voiceChannel;
-        if (!voiceChannel) return msg.channel.send('يجب توآجد حضرتك بروم صوتي .');
+        if (!voiceChannel) return msg.channel.send('يجب توآجدك بروم صوتي .');
         const permissions = voiceChannel.permissionsFor(msg.client.user);
         if (!permissions.has('CONNECT')) {
            
-            return msg.channel.send('لا يتوآجد لدي صلاحية للتكلم بهذآ الروم');
+            return msg.channel.send('لا يتوآجد لدي صلاحية للتكلم بهذا الروم');
         }
         if (!permissions.has('SPEAK')) {
-            return msg.channel.send('لا يتوآجد لدي صلاحية للتكلم بهذآ الروم');
+            return msg.channel.send('لا يتوآجد لدي صلاحية للتكلم بهذا الروم');
         }
  
         if (!permissions.has('EMBED_LINKS')) {
@@ -85,7 +85,7 @@ client.on('message', async msg => {
                     var videos = await youtube.searchVideos(searchString, 5);
                     let index = 0;
                     const embed1 = new Discord.RichEmbed()
-                    .setDescription(`**الرجآء من حضرتك إختيآر رقم المقطع** :
+                    .setDescription(`**الرجآء منك إختيآر رقم المقطع** :
 ${videos.map(video2 => `[**${++index} **] \`${video2.title}\``).join('\n')}`)
  
                     .setFooter("By iiFireKingYTii_#7310")
